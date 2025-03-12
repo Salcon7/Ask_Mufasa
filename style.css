@@ -142,3 +142,28 @@ nav ul li a:hover {
     max-width: 600px;
     margin: 0 auto;
 }
+#home {
+    position: relative; /* Enables layering */
+    background: url('Mufasa background.jpeg') no-repeat center center/cover;
+    color: #000; /* Black text color */
+    text-align: center;
+    padding: 5rem 2rem; /* Spacing */
+    z-index: 1; /* Keeps content above the overlay */
+}
+
+#home::before {
+    content: ''; /* Creates the overlay layer */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(147, 120, 91, 0.7); /* Layer color (same as #93785b with 70% opacity) */
+    z-index: 0; /* Places the overlay below the content */
+    pointer-events: none; /* Ensures the overlay doesn’t interfere with content clicks */
+}
+
+#home h1, #home p {
+    position: relative; /* Ensures text is above the overlay */
+    z-index: 2; /* Places text content above the overlay */
+}
