@@ -1,18 +1,3 @@
-/* Reset some basic styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-/* General body styles */
-body {
-    line-height: 1.6;
-    background-color: #fff;
-    color: #333;
-}
-
 /* Header styles */
 header {
     background-color: #fff; /* White background */
@@ -20,7 +5,7 @@ header {
     display: flex; /* Flexbox layout */
     justify-content: space-between; /* Spread content horizontally */
     align-items: center; /* Align items vertically */
-    border-bottom: 1px solid #ddd; /* Optional: subtle border for separation */
+    border-bottom: 1px solid #ddd; /* Optional: subtle border */
 }
 
 /* Logo styles */
@@ -56,14 +41,14 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #e57373; /* Slightly darker shade for hover */
+    background-color: #e57373; /* Slightly darker hover effect */
 }
 
 /* Dropdown menu styles */
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%; /* Below the dropdown link */
+    top: 100%; /* Below dropdown link */
     left: 0;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
