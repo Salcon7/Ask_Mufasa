@@ -1,1 +1,51 @@
+/* Header Styling */
+header {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: relative;
+}
 
+header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+header p {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+/* Header Options */
+.header-options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Sign In Button */
+.sign-in-btn {
+    background-color: #fff;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.sign-in-btn:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+/* Language Selector */
+.language-selector {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
