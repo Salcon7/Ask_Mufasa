@@ -120,3 +120,138 @@ header p {
     font-size: 1rem;
     cursor: pointer;
 }
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* General body styles */
+body {
+    line-height: 1.6;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background-color: #fff; /* White background */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd; /* Optional: subtle border for separation */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Navigation menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav ul li {
+    position: relative; /* For dropdown positioning */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+nav ul li a:hover {
+    color: #f1948a; /* Highlight on hover */
+}
+
+/* Dropdown menu styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Position just below the parent link */
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    min-width: 200px;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1948a; /* Background highlight on hover */
+    color: #fff; /* Text color when hovered */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Login/Sign In button and Language Selector */
+.header-options {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sign-in-btn {
+    background-color: #f1948a;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.sign-in-btn:hover {
+    background-color: #e57373;
+}
+
+.language-selector {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Home Section */
+#home {
+    background-color: #f1948a; /* Set background color */
+    color: #000; /* Black font color */
+    text-align: center;
+    padding: 5rem 2rem; /* Add spacing */
+}
+
+#home h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#home p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
