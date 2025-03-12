@@ -33,6 +33,7 @@ header {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    color: #93785b; /* Updated logo color */
 }
 
 /* Navigation menu */
@@ -48,119 +49,9 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    background-color: #93785b; /* for button-like navigation links */
-    color: #fff;
-    font-size: 1rem;
+    background-color: #93785b; /* Updated button background color */
+    color: #fff; /* Text color */
     padding: 0.5rem 1rem;
-}
-
-nav ul li a:hover {
-    color: #C70039; /* Highlight on hover */
-}
-
-/* Dropdown menu styles */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%; /* Position just below the parent link */
-    left: 0;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    min-width: 200px;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    color: #333;
-    font-size: 0.9rem;
-}
-
-.dropdown-content a:hover {
-    background-color: #93785b; /* Background highlight on hover */
-    color: #fff; /* Text color when hovered */
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Login/Sign In button and Language Selector */
-.header-options {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.sign-in-btn {
-    background-color: #93785b;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-.sign-in-btn:hover {
-    background-color: #e57373;
-}
-
-.language-selector {
-    background-color: #fff;
-    padding: 0.5rem;
-    border: 1px solid #93785b;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-/* Home Section */
-#home {
-    background-color: #93785b; /* Set background color */
-    color: #000; /* Black font color */
-    text-align: center;
-    padding: 5rem 2rem; /* Add spacing */
-}
-
-#home h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-#home p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto;
-}
-/* Header Styling */
-header {
-    background-color: #fff; /* White background */
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ddd; /* Optional: subtle border for separation */
-}
-
-/* Navigation menu styles */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
-    align-items: center; /* Vertically aligns the menu items */
-}
-
-nav ul li a {
-    background-color: #93785b; /* Match the button's color */
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border: none;
     border-radius: 5px;
     font-size: 1rem;
     display: inline-block;
@@ -169,14 +60,14 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #e57373; /* Slightly darker shade for hover effect */
+    background-color: #8a6e52; /* Slightly darker hover color */
 }
 
 /* Dropdown menu styles */
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 100%; /* Position just below the parent link */
     left: 0;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -195,23 +86,23 @@ nav ul li a:hover {
 }
 
 .dropdown-content a:hover {
-    background-color: #93785b;
+    background-color: #93785b; /* Updated hover background color */
     color: #fff;
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+    display: block; /* Show dropdown on hover */
 }
 
-/* Align navigation with Login/Sign In */
-.header-options, nav ul {
+/* Login/Sign In button and Language Selector */
+.header-options {
     display: flex;
-    align-items: center; /* Align items vertically */
-    gap: 1rem; /* Space between elements */
+    align-items: center;
+    gap: 1rem;
 }
 
-.sign-in-btn, .language-selector {
-    background-color: #93785b;
+.sign-in-btn {
+    background-color: #93785b; /* Updated button background color */
     color: #fff;
     padding: 0.5rem 1rem;
     border: none;
@@ -220,10 +111,34 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
-.sign-in-btn:hover, .language-selector:hover {
-    background-color: #e57373;
+.sign-in-btn:hover {
+    background-color: #8a6e52; /* Slightly darker hover color */
 }
 
 .language-selector {
-    border: 1px solid #ddd;
+    background-color: #fff;
+    border: 1px solid #93785b; /* Updated border color */
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Home Section */
+#home {
+    background-color: #93785b; /* Updated home section background color */
+    color: #000; /* Black font color */
+    text-align: center;
+    padding: 5rem 2rem; /* Add spacing */
+}
+
+#home h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#home p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
