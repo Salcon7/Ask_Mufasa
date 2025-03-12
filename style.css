@@ -347,3 +347,97 @@ nav ul li a:hover {
 .language-selector {
     border: 1px solid #ddd;
 }
+/* Header Styling */
+header {
+    background-color: #fff; /* White background */
+    padding: 1rem 2rem;
+    display: flex; /* Flexbox for horizontal alignment */
+    justify-content: space-between; /* Spread content across the header */
+    align-items: center; /* Vertically align items */
+    border-bottom: 1px solid #ddd;
+}
+
+/* Navigation menu styles */
+nav ul {
+    list-style: none;
+    display: flex; /* Make navigation horizontal */
+    gap: 1rem; /* Add space between items */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    background-color: #f1948a; /* Match the button's color */
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+nav ul li a:hover {
+    background-color: #e57373; /* Slightly darker shade for hover effect */
+}
+
+/* Dropdown menu styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    min-width: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1948a;
+    color: #fff;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Header Options (Sign In and Language Selector) */
+.header-options {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    gap: 1rem; /* Space between items */
+}
+
+.sign-in-btn {
+    background-color: #f1948a;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.sign-in-btn:hover {
+    background-color: #e57373;
+}
+
+.language-selector {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
