@@ -1,31 +1,32 @@
-/* Header styles */
+/* Header Styles */
 header {
     background-color: #fff; /* White background */
     padding: 1rem 2rem;
-    display: flex; /* Flexbox layout */
-    justify-content: space-between; /* Spread content horizontally */
-    align-items: center; /* Align items vertically */
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Spread items across header */
+    align-items: center; /* Vertically align items */
     border-bottom: 1px solid #ddd; /* Optional: subtle border */
 }
 
-/* Logo styles */
+/* Logo Styles */
 header .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #f1948a; /* Logo color */
+    color: #f1948a; /* Pink logo color */
 }
 
-/* Navigation menu */
+/* Navigation Menu */
 nav ul {
     list-style: none;
     display: flex; /* Horizontal alignment */
-    gap: 1rem; /* Space between items */
+    gap: 1rem; /* Add spacing between items */
     margin: 0;
     padding: 0;
+    align-items: center; /* Align items with header options */
 }
 
 nav ul li {
-    position: relative; /* For dropdown positioning */
+    position: relative; /* Needed for dropdown positioning */
 }
 
 nav ul li a {
@@ -33,18 +34,17 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    border-radius: 5px;
+    border-radius: 5px; /* Rounded corners */
     font-size: 1rem;
-    display: inline-block;
     text-align: center;
     cursor: pointer;
 }
 
 nav ul li a:hover {
-    background-color: #e57373; /* Slightly darker hover effect */
+    background-color: #e57373; /* Darker hover color */
 }
 
-/* Dropdown menu styles */
+/* Dropdown Menu */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -72,14 +72,14 @@ nav ul li a:hover {
 }
 
 .dropdown:hover .dropdown-content {
-    display: block; /* Show dropdown on hover */
+    display: block; /* Show dropdown when hovered */
 }
 
-/* Header options (Sign In and Language Selector) */
+/* Align Header Options (Sign In and Language Selector) */
 .header-options {
-    display: flex; /* Align items horizontally */
-    align-items: center; /* Center vertically */
-    gap: 1rem; /* Space between items */
+    display: flex; /* Horizontal alignment */
+    align-items: center; /* Align with navigation menu */
+    gap: 1rem; /* Space between Sign In and Language Selector */
 }
 
 .sign-in-btn {
@@ -103,4 +103,11 @@ nav ul li a:hover {
     padding: 0.5rem;
     font-size: 1rem;
     cursor: pointer;
+}
+
+/* Consistent Alignment for All Elements */
+header nav ul, .header-options {
+    display: flex; /* Horizontal row layout */
+    align-items: center; /* Vertically align items */
+    gap: 1rem; /* Add consistent spacing */
 }
