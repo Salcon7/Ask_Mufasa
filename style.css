@@ -1,125 +1,3 @@
-/* Header Styles */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .logo {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-left: 1rem;
-}
-
-header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
-}
-
-header nav ul li {
-    margin: 0;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-header .header-options {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-right: 1rem;
-}
-
-/* Sign-In Button */
-.sign-in-btn {
-    background-color: #fff;
-    color: #333;
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    font-size: 0.9rem;
-}
-
-.sign-in-btn:hover {
-    background-color: #555;
-    color: #fff;
-}
-
-/* Language Selector */
-.language-selector {
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem;
-    font-size: 0.9rem;
-    cursor: pointer;
-}
-
-/* Header Styling */
-header {
-    text-align: center;
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
-    position: relative;
-}
-
-header h1 {
-    margin-bottom: 0.5rem;
-    font-size: 2rem;
-}
-
-header p {
-    margin-bottom: 1.5rem;
-    font-size: 1.2rem;
-}
-
-/* Header Options */
-.header-options {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-/* Sign In Button */
-.sign-in-btn {
-    background-color: #fff;
-    color: #333;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-.sign-in-btn:hover {
-    background-color: #555;
-    color: #fff;
-}
-
-/* Language Selector */
-.language-selector {
-    padding: 0.5rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-}
 /* Reset some basic styles */
 * {
     margin: 0;
@@ -139,29 +17,26 @@ body {
 header {
     background-color: #fff; /* White background */
     padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Spread content horizontally */
+    align-items: center; /* Align items vertically */
     border-bottom: 1px solid #ddd; /* Optional: subtle border for separation */
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.logo {
+/* Logo styles */
+header .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    color: #f1948a; /* Logo color */
 }
 
 /* Navigation menu */
 nav ul {
     list-style: none;
-    display: flex;
-    gap: 1rem;
+    display: flex; /* Horizontal alignment */
+    gap: 1rem; /* Space between items */
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
@@ -169,118 +44,10 @@ nav ul li {
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-}
-
-nav ul li a:hover {
-    color: #f1948a; /* Highlight on hover */
-}
-
-/* Dropdown menu styles */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%; /* Position just below the parent link */
-    left: 0;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    min-width: 200px;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    color: #333;
-    font-size: 0.9rem;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1948a; /* Background highlight on hover */
-    color: #fff; /* Text color when hovered */
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Login/Sign In button and Language Selector */
-.header-options {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.sign-in-btn {
-    background-color: #f1948a;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-.sign-in-btn:hover {
-    background-color: #e57373;
-}
-
-.language-selector {
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-/* Home Section */
-#home {
-    background-color: #f1948a; /* Set background color */
-    color: #000; /* Black font color */
-    text-align: center;
-    padding: 5rem 2rem; /* Add spacing */
-}
-
-#home h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-#home p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto;
-}
-/* Header Styling */
-header {
-    background-color: #fff; /* White background */
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ddd; /* Optional: subtle border for separation */
-}
-
-/* Navigation menu styles */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
-    align-items: center; /* Vertically aligns the menu items */
-}
-
-nav ul li a {
-    background-color: #f1948a; /* Match the button's color */
+    background-color: #f1948a; /* Match button color */
     color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    border: none;
     border-radius: 5px;
     font-size: 1rem;
     display: inline-block;
@@ -289,14 +56,14 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #e57373; /* Slightly darker shade for hover effect */
+    background-color: #e57373; /* Slightly darker shade for hover */
 }
 
 /* Dropdown menu styles */
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 100%; /* Below the dropdown link */
     left: 0;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -320,102 +87,13 @@ nav ul li a:hover {
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+    display: block; /* Show dropdown on hover */
 }
 
-/* Align navigation with Login/Sign In */
-.header-options, nav ul {
-    display: flex;
-    align-items: center; /* Align items vertically */
-    gap: 1rem; /* Space between elements */
-}
-
-.sign-in-btn, .language-selector {
-    background-color: #f1948a;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-.sign-in-btn:hover, .language-selector:hover {
-    background-color: #e57373;
-}
-
-.language-selector {
-    border: 1px solid #ddd;
-}
-/* Header Styling */
-header {
-    background-color: #fff; /* White background */
-    padding: 1rem 2rem;
-    display: flex; /* Flexbox for horizontal alignment */
-    justify-content: space-between; /* Spread content across the header */
-    align-items: center; /* Vertically align items */
-    border-bottom: 1px solid #ddd;
-}
-
-/* Navigation menu styles */
-nav ul {
-    list-style: none;
-    display: flex; /* Make navigation horizontal */
-    gap: 1rem; /* Add space between items */
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li a {
-    background-color: #f1948a; /* Match the button's color */
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    text-align: center;
-    cursor: pointer;
-}
-
-nav ul li a:hover {
-    background-color: #e57373; /* Slightly darker shade for hover effect */
-}
-
-/* Dropdown menu styles */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    min-width: 200px;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    color: #333;
-    font-size: 0.9rem;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1948a;
-    color: #fff;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Header Options (Sign In and Language Selector) */
+/* Header options (Sign In and Language Selector) */
 .header-options {
-    display: flex;
-    align-items: center; /* Align items vertically */
+    display: flex; /* Align items horizontally */
+    align-items: center; /* Center vertically */
     gap: 1rem; /* Space between items */
 }
 
