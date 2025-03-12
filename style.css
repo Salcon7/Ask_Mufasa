@@ -33,7 +33,7 @@ header {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #93785b; /* Updated logo color */
+    color: #93785b; /* Ensure the logo text uses this color */
 }
 
 /* Navigation menu */
