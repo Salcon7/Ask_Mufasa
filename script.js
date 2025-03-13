@@ -61,15 +61,3 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Element not found: Check your HTML for correct IDs.");
     }
 });
-const getStartedBtn = document.getElementById("get-started-btn");
-const resumeUploadSection = document.getElementById("resume-upload");
-
-if (getStartedBtn && resumeUploadSection) {
-    getStartedBtn.addEventListener("click", (event) => {
-        event.preventDefault();
-        resumeUploadSection.style.display = "block";
-        getStartedBtn.style.display = "none";
-    });
-} else {
-    console.error("Failed to find the required elements in the DOM.");
-}
