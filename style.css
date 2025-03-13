@@ -200,11 +200,14 @@ nav ul li a:hover {
 /* Resume Upload Section */
 #resume-upload {
     display: none;
-    margin-top: 3rem;
-    padding: 2rem;
-    justify-content: center;
+    margin-top: 2rem; /* Space below the "Get Started" button */
+    justify-content: space-between;
     align-items: flex-start;
-    gap: 2rem;
+    gap: 2rem; /* Spacing between cards */
+    flex-wrap: wrap; /* Ensure horizontal alignment */
+    max-width: 80%; /* Center cards within the page */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Card Design */
@@ -214,8 +217,8 @@ nav ul li a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 2rem;
-    max-width: 500px;
     flex: 1;
+    max-width: 400px; /* Ensure cards don’t exceed width */
     text-align: center;
 }
 
