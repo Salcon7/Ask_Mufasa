@@ -16,12 +16,12 @@ body {
 
 /* Header styles */
 header {
-    background-color: #fff; /* White background */
+    background-color: #fff;
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #ddd; /* Optional: subtle border for separation */
+    border-bottom: 1px solid #ddd;
 }
 
 .header-container {
@@ -34,7 +34,7 @@ header {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #93785b; /* Ensure the logo text uses this color */
+    color: #93785b;
 }
 
 /* Navigation menu */
@@ -45,13 +45,13 @@ nav ul {
 }
 
 nav ul li {
-    position: relative; /* For dropdown positioning */
+    position: relative;
 }
 
 nav ul li a {
     text-decoration: none;
-    background-color: #93785b; /* Updated button background color */
-    color: #fff; /* Text color */
+    background-color: #93785b;
+    color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     font-size: 1rem;
@@ -61,14 +61,14 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #8a6e52; /* Slightly darker hover color */
+    background-color: #8a6e52;
 }
 
 /* Dropdown menu styles */
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%; /* Position just below the parent link */
+    top: 100%;
     left: 0;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -87,12 +87,12 @@ nav ul li a:hover {
 }
 
 .dropdown-content a:hover {
-    background-color: #93785b; /* Updated hover background color */
+    background-color: #93785b;
     color: #fff;
 }
 
 .dropdown:hover .dropdown-content {
-    display: block; /* Show dropdown on hover */
+    display: block;
 }
 
 /* Login/Sign In button and Language Selector */
@@ -103,7 +103,7 @@ nav ul li a:hover {
 }
 
 .sign-in-btn {
-    background-color: #93785b; /* Updated button background color */
+    background-color: #93785b;
     color: #fff;
     padding: 0.5rem 1rem;
     border: none;
@@ -113,12 +113,12 @@ nav ul li a:hover {
 }
 
 .sign-in-btn:hover {
-    background-color: #8a6e52; /* Slightly darker hover color */
+    background-color: #8a6e52;
 }
 
 .language-selector {
     background-color: #fff;
-    border: 1px solid #93785b; /* Updated border color */
+    border: 1px solid #93785b;
     border-radius: 5px;
     padding: 0.5rem;
     font-size: 1rem;
@@ -127,10 +127,10 @@ nav ul li a:hover {
 
 /* Home Section */
 #home {
-    background-color: #93785b; /* Updated home section background color */
-    color: #000; /* Black font color */
+    background-color: #93785b;
+    color: #000;
     text-align: center;
-    padding: 5rem 2rem; /* Add spacing */
+    padding: 5rem 2rem;
 }
 
 #home h1 {
@@ -145,53 +145,34 @@ nav ul li a:hover {
 }
 
 #home {
-    position: relative; /* Enables layering */
-    background: url('Mufasa background.jpg') no-repeat center center/cover;
-    color: #000; /* Black text color */
-    text-align: center;
-    padding: 5rem 2rem; /* Spacing */
-    z-index: 1; /* Keeps content above the overlay */
-}
-
-/* Animation for rising text */
-.animate-rise {
     position: relative;
-    opacity: 0; /* Start invisible */
-    transform: translateY(50px); /* Start position: moved down */
-    animation: rise-animation 2s ease-out forwards; /* Apply animation */
-}
-
-@keyframes rise-animation {
-    0% {
-        opacity: 0;
-        transform: translateY(50px); /* Start off-screen */
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0); /* End at normal position */
-    }
+    background: url('Mufasa background.jpg') no-repeat center center/cover;
+    color: #000;
+    text-align: center;
+    padding: 5rem 2rem;
+    z-index: 1;
 }
 
 #home::before {
-    content: ''; /* Creates the overlay layer */
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(147, 120, 91, 0.5); /* Layer color (same as #93785b with 70% opacity) */
-    z-index: 0; /* Places the overlay below the content */
-    pointer-events: none; /* Ensures the overlay doesn’t interfere with content clicks */
+    background-color: rgba(147, 120, 91, 0.5);
+    z-index: 0;
+    pointer-events: none;
 }
 
 #home h1, #home p {
-    position: relative; /* Ensures text is above the overlay */
-    z-index: 2; /* Places text content above the overlay */
+    position: relative;
+    z-index: 2;
 }
 
 /* Get Started Section */
 #get-started-section {
-    background-color: #fff; /* White background */
+    background-color: #fff;
     padding: 3rem 2rem;
     text-align: center;
 }
@@ -199,116 +180,64 @@ nav ul li a:hover {
 /* Get Started Button Styling */
 #get-started-section .get-started-btn {
     display: inline-block;
-    background-color: #93785b; /* Project's color theme */
-    color: #fff; /* White text */
+    background-color: #93785b;
+    color: #fff;
     padding: 0.8rem 2rem;
-    border-radius: 25px; /* Rounded edges */
-    text-decoration: none; /* Removes underline */
-    font-size: 1rem; /* Font size */
-    font-weight: bold; /* Makes the text bold */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
-}
-
-/* Hover Effects */
-#get-started-section .get-started-btn:hover {
-    background-color: #8a6e52; /* Slightly darker hover shade */
-    transform: translateY(-3px); /* Lift effect */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
-}
-
-/* Center alignment for the Resume Upload section */
-#resume-upload {
-    display: none; /* Initially hidden */
-    padding: 3rem 2rem;
-    text-align: center; /* Centers text within the section */
-    background-color: #fff; /* White background to match the design */
-}
-
-.upload-container {
-    max-width: 500px; /* Restrict the width for better readability */
-    margin: 0 auto; /* Centers the container */
-    padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a polished look */
-    border-radius: 10px; /* Slightly rounded corners */
-    background-color: #f9f9f9; /* Light background for the container */
-}
-
-/* Label styling */
-.upload-container label {
-    display: block; /* Forces the label onto a new line */
-    margin-bottom: 0.5rem;
-    font-weight: bold; /* Makes the text stand out */
-    color: #333;
-}
-
-/* File input field */
-.upload-container input[type="file"] {
-    display: block;
-    margin: 1rem auto; /* Center the input field */
-    padding: 0.5rem;
+    border-radius: 25px;
+    text-decoration: none;
     font-size: 1rem;
-    background-color: #fff;
-    color: #333;
-    border: 1px solid #93785b; /* Theme border color */
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%; /* Adjust to fit the container */
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Upload button styling */
-.upload-btn {
-    display: inline-block;
-    background-color: #93785b; /* Matches project color theme */
-    color: #fff; /* White text for contrast */
+#get-started-section .get-started-btn:hover {
+    background-color: #8a6e52;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Resume Upload Section */
+#resume-upload {
+    display: none;
+    margin-top: 3rem;
+    padding: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+/* Card Design */
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    max-width: 500px;
+    flex: 1;
+    text-align: center;
+}
+
+/* Button Styling for Upload and Create */
+.upload-btn,
+.create-btn {
+    background-color: #93785b;
+    color: #fff;
+    border: none;
     padding: 0.8rem 2rem;
     font-size: 1rem;
     font-weight: bold;
-    border: none;
-    border-radius: 25px; /* Rounded corners */
-    text-decoration: none; /* Removes underline */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    border-radius: 25px;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Hover effect for the upload button */
-.upload-btn:hover {
-    background-color: #8a6e52; /* Slightly darker theme color on hover */
-    transform: translateY(-3px); /* Lift effect */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
-}
-
-/* Shared Button Styles */
-.upload-btn,
-.create-btn {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    max-width: 200px;
-    text-align: center;
-    margin-top: 10px;
-}
-
 .upload-btn:hover,
 .create-btn:hover {
-    background-color: #0056b3;
-}
-
-/* Layout Styles */
-#resume-upload {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.upload-container,
-.create-container {
-    text-align: center;
-    flex: 1;
+    background-color: #8a6e52;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
