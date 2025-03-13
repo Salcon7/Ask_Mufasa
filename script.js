@@ -80,10 +80,10 @@ document.addEventListener("DOMContentLoaded", () => {
             formData.append("resume", file);
 
             try {
-                const response = await fetch("http://localhost:3000/upload", {
-                    method: "POST",
-                    body: formData,
-                });
+                const response = await fetch("https://f4d9-105-179-5-74.ngrok-free.app/upload", {
+    method: "POST",
+    body: formData,
+});
 
                 if (response.ok) {
                     const extractedData = await response.json();
