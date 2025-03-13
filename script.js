@@ -41,7 +41,7 @@ const getStartedBtn = document.getElementById("get-started-btn");
 const resumeUploadSection = document.getElementById("resume-upload");
 
 // Add click event listener to the Get Started button
-getStartedBtn.addEventListener("click", (event) => {
+{
     event.preventDefault(); // Prevent default link behavior
     resumeUploadSection.style.display = "block"; // Show the upload section
     getStartedBtn.style.display = "none"; // Hide the Get Started button
