@@ -278,3 +278,37 @@ nav ul li a:hover {
     transform: translateY(-3px); /* Lift effect */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
 }
+
+/* Shared Button Styles */
+.upload-btn,
+.create-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.upload-btn:hover,
+.create-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Layout Styles */
+#resume-upload {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.upload-container,
+.create-container {
+    text-align: center;
+    flex: 1;
+}
