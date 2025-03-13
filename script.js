@@ -22,42 +22,42 @@ const translations = {
     }
 };
 
-// Reference to the language selector
-const languageSelector = document.getElementById("language-selector");
-
-// Event listener to handle language changes
-languageSelector.addEventListener("change", (event) => {
-    const selectedLanguage = event.target.value;
-    const heading = document.querySelector("#home h1");
-    const subheading = document.querySelector("#home p");
-
-    // Change the content based on the selected language
-    heading.textContent = translations[selectedLanguage].heading;
-    subheading.textContent = translations[selectedLanguage].subheading;
-});
-
-// Reference to the Get Started button and Resume Upload section
-const getStartedBtn = document.getElementById("get-started-btn");
-const resumeUploadSection = document.getElementById("resume-upload");
-
-// Add click event listener to the Get Started button
-{
-    event.preventDefault(); // Prevent default link behavior
-    resumeUploadSection.style.display = "block"; // Show the upload section
-    getStartedBtn.style.display = "none"; // Hide the Get Started button
-});
+// Wait until the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
+    // Reference to the language selector
+    const languageSelector = document.getElementById("language-selector");
+
+    // Event listener to handle language changes
+    if (languageSelector) {
+        languageSelector.addEventListener("change", (event) => {
+            const selectedLanguage = event.target.value;
+            const heading = document.querySelector("#home h1");
+            const subheading = document.querySelector("#home p");
+
+            // Change the content based on the selected language
+            if (heading && subheading && translations[selectedLanguage]) {
+                heading.textContent = translations[selectedLanguage].heading;
+                subheading.textContent = translations[selectedLanguage].subheading;
+            } else {
+                console.error("Translation or elements missing for the selected language.");
+            }
+        });
+    } else {
+        console.error("Language selector not found in the DOM.");
+    }
+
+    // Reference to the Get Started button and Resume Upload section
     const getStartedBtn = document.getElementById("get-started-btn");
     const resumeUploadSection = document.getElementById("resume-upload");
 
+    // Add click event listener to the Get Started button
     if (getStartedBtn && resumeUploadSection) {
-        // Add click event listener to the Get Started button
         getStartedBtn.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent default link behavior
             resumeUploadSection.style.display = "block"; // Show the upload section
             getStartedBtn.style.display = "none"; // Hide the Get Started button
         });
     } else {
-        console.error("Element not found: Check your HTML for correct IDs.");
+        console.error("Get Started button or Resume Upload section not found in the DOM.");
     }
 });
