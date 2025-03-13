@@ -24,10 +24,9 @@ const translations = {
 
 // Wait until the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
-    // Reference to the language selector
+    // Language Translation Functionality
     const languageSelector = document.getElementById("language-selector");
 
-    // Event listener to handle language changes
     if (languageSelector) {
         languageSelector.addEventListener("change", (event) => {
             const selectedLanguage = event.target.value;
@@ -46,16 +45,14 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Language selector not found in the DOM.");
     }
 
-    // Reference to the Get Started button and Resume Upload section
+    // Get Started Button and Resume Upload Section
     const getStartedBtn = document.getElementById("get-started-btn");
     const resumeUploadSection = document.getElementById("resume-upload");
 
-    // Add click event listener to the Get Started button
     if (getStartedBtn && resumeUploadSection) {
         getStartedBtn.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent default link behavior
             resumeUploadSection.style.display = "block"; // Show the upload section
-            getStartedBtn.style.display = "none"; // Hide the Get Started button
         });
     } else {
         console.error("Get Started button or Resume Upload section not found in the DOM.");
