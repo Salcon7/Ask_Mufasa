@@ -187,3 +187,30 @@ nav ul li a:hover {
     position: relative; /* Ensures text is above the overlay */
     z-index: 2; /* Places text content above the overlay */
 }
+
+/* Get Started Button Container */
+.get-started-container {
+    margin-top: 2rem; /* Adds space above the button */
+    text-align: center; /* Center the button horizontally */
+}
+
+/* Get Started Button Styling */
+.get-started-btn {
+    display: inline-block;
+    background-color: #93785b; /* Matches your project's color theme */
+    color: #fff; /* White text */
+    padding: 0.8rem 2rem; /* Spacing around the text */
+    border-radius: 25px; /* Rounded edges */
+    text-decoration: none; /* Removes underline */
+    font-size: 1rem; /* Font size */
+    font-weight: bold; /* Makes the text bold */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+}
+
+/* Hover Effects */
+.get-started-btn:hover {
+    background-color: #8a6e52; /* Slightly darker shade on hover */
+    transform: translateY(-3px); /* Adds a lift effect */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+}
