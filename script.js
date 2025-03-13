@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const skillsField = document.getElementById("skills");
 
     uploadForm.addEventListener("submit", async (event) => {
-        event.preventDefault(); // Prevent form submission
+        event.preventDefault(); // Prevent the page from reloading
 
         const fileInput = document.getElementById("resume");
         const file = fileInput.files[0];
@@ -80,8 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
             formData.append("resume", file);
 
             try {
-                // Send file to the server
-                const response = await fetch("https://your-server-endpoint.com/upload", {
+                const response = await fetch("http://localhost:3000/upload", {
                     method: "POST",
                     body: formData,
                 });
@@ -89,18 +88,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (response.ok) {
                     const extractedData = await response.json();
 
-                    // Display extracted information on the page
+                    // Display extracted information
                     nameField.textContent = extractedData.name || "N/A";
                     dobField.textContent = extractedData.dob || "N/A";
                     experienceField.textContent = extractedData.experience || "N/A";
                     skillsField.textContent = extractedData.skills || "N/A";
 
-                    cvSummary.style.display = "block"; // Show the summary section
+                    cvSummary.style.display = "block"; // Show extracted data section
                 } else {
                     console.error("Failed to extract data from the CV.");
+                    alert("Failed to process your CV. Please try again.");
                 }
             } catch (error) {
                 console.error("Error uploading CV:", error);
+                alert("An error occurred while uploading your CV.");
             }
         } else {
             alert("Please select a file to upload.");
