@@ -58,8 +58,9 @@
 </section>
 
 <!-- Resume Upload Section (Initially Hidden) -->
-<section id="resume-upload" style="display: none;">
-    <div class="upload-container">
+<section id="resume-upload" style="display: flex; justify-content: space-between; align-items: flex-start;">
+    <!-- Upload CV Section -->
+    <div class="upload-container" style="flex: 1; margin-right: 10px;">
         <h2>Upload Your Resume/CV</h2>
         <form id="upload-form">
             <label for="resume">Choose your file:</label>
@@ -75,6 +76,13 @@
             <p><strong>Work Experience:</strong> <span id="experience"></span></p>
             <p><strong>Skills:</strong> <span id="skills"></span></p>
         </div>
+    </div>
+
+    <!-- Create CV Section -->
+    <div class="create-container" style="flex: 1; margin-left: 10px;">
+        <h2>Don't Have One?</h2>
+        <p>No worries! We got you covered.</p>
+        <button class="create-btn">Create CV</button>
     </div>
 </section>
     </main>
