@@ -58,3 +58,52 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Get Started button or Resume Upload section not found in the DOM.");
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const uploadForm = document.getElementById("upload-form");
+    const cvSummary = document.getElementById("cv-summary");
+
+    // Reference to extracted data fields
+    const nameField = document.getElementById("name");
+    const dobField = document.getElementById("dob");
+    const experienceField = document.getElementById("experience");
+    const skillsField = document.getElementById("skills");
+
+    uploadForm.addEventListener("submit", async (event) => {
+        event.preventDefault(); // Prevent form submission
+
+        const fileInput = document.getElementById("resume");
+        const file = fileInput.files[0];
+
+        if (file) {
+            const formData = new FormData();
+            formData.append("resume", file);
+
+            try {
+                // Send file to the server
+                const response = await fetch("https://your-server-endpoint.com/upload", {
+                    method: "POST",
+                    body: formData,
+                });
+
+                if (response.ok) {
+                    const extractedData = await response.json();
+
+                    // Display extracted information on the page
+                    nameField.textContent = extractedData.name || "N/A";
+                    dobField.textContent = extractedData.dob || "N/A";
+                    experienceField.textContent = extractedData.experience || "N/A";
+                    skillsField.textContent = extractedData.skills || "N/A";
+
+                    cvSummary.style.display = "block"; // Show the summary section
+                } else {
+                    console.error("Failed to extract data from the CV.");
+                }
+            } catch (error) {
+                console.error("Error uploading CV:", error);
+            }
+        } else {
+            alert("Please select a file to upload.");
+        }
+    });
+});
