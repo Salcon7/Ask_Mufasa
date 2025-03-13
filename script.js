@@ -108,3 +108,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const getStartedBtn = document.getElementById("get-started-btn");
+    const resumeUploadSection = document.getElementById("resume-upload");
+
+    getStartedBtn.addEventListener("click", (e) => {
+        e.preventDefault(); // Prevent default anchor behavior
+        resumeUploadSection.style.display = "flex"; // Show the upload section
+        getStartedBtn.parentElement.style.marginBottom = "2rem"; // Add spacing below "Get Started" button
+    });
+});
