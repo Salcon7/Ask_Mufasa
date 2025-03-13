@@ -215,3 +215,65 @@ nav ul li a:hover {
     transform: translateY(-3px); /* Lift effect */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
 }
+
+/* Center alignment for the Resume Upload section */
+#resume-upload {
+    display: none; /* Initially hidden */
+    padding: 3rem 2rem;
+    text-align: center; /* Centers text within the section */
+    background-color: #fff; /* White background to match the design */
+}
+
+.upload-container {
+    max-width: 500px; /* Restrict the width for better readability */
+    margin: 0 auto; /* Centers the container */
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a polished look */
+    border-radius: 10px; /* Slightly rounded corners */
+    background-color: #f9f9f9; /* Light background for the container */
+}
+
+/* Label styling */
+.upload-container label {
+    display: block; /* Forces the label onto a new line */
+    margin-bottom: 0.5rem;
+    font-weight: bold; /* Makes the text stand out */
+    color: #333;
+}
+
+/* File input field */
+.upload-container input[type="file"] {
+    display: block;
+    margin: 1rem auto; /* Center the input field */
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #93785b; /* Theme border color */
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Adjust to fit the container */
+}
+
+/* Upload button styling */
+.upload-btn {
+    display: inline-block;
+    background-color: #93785b; /* Matches project color theme */
+    color: #fff; /* White text for contrast */
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    text-decoration: none; /* Removes underline */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for the upload button */
+.upload-btn:hover {
+    background-color: #8a6e52; /* Slightly darker theme color on hover */
+    transform: translateY(-3px); /* Lift effect */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+}
