@@ -46,3 +46,30 @@ getStartedBtn.addEventListener("click", (event) => {
     resumeUploadSection.style.display = "block"; // Show the upload section
     getStartedBtn.style.display = "none"; // Hide the Get Started button
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const getStartedBtn = document.getElementById("get-started-btn");
+    const resumeUploadSection = document.getElementById("resume-upload");
+
+    if (getStartedBtn && resumeUploadSection) {
+        // Add click event listener to the Get Started button
+        getStartedBtn.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent default link behavior
+            resumeUploadSection.style.display = "block"; // Show the upload section
+            getStartedBtn.style.display = "none"; // Hide the Get Started button
+        });
+    } else {
+        console.error("Element not found: Check your HTML for correct IDs.");
+    }
+});
+const getStartedBtn = document.getElementById("get-started-btn");
+const resumeUploadSection = document.getElementById("resume-upload");
+
+if (getStartedBtn && resumeUploadSection) {
+    getStartedBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        resumeUploadSection.style.display = "block";
+        getStartedBtn.style.display = "none";
+    });
+} else {
+    console.error("Failed to find the required elements in the DOM.");
+}
