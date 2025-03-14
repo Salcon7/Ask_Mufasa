@@ -3,30 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choose a CV Template</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your existing CSS -->
+    <title>Create Your CV</title>
+    <link rel="stylesheet" href="style.css"> <!-- Linking your existing CSS -->
 </head>
 <body>
+    <!-- Header Section -->
     <header>
-        <h1>Choose a CV Template</h1>
-        <p>Browse through our templates and build your professional CV!</p>
+        <div class="header-container">
+            <!-- Logo/Title on the left -->
+            <div class="logo" style="color: #93785b;">Ask Mufasa!</div>
+            <!-- Navigation menu on the right -->
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#what-we-do">What we do</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li class="dropdown">
+                        <a href="#training-resources" class="dropbtn">Training Resources</a>
+                        <div class="dropdown-content">
+                            <a href="#cv-training">CV/Resume Training</a>
+                            <a href="#hr-training">HR Training</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Login/Sign In and Language selector -->
+            <div class="header-options">
+                <button class="sign-in-btn">Login / Sign In</button>
+                <select id="language-selector" class="language-selector" aria-label="Select Language">
+                    <option value="en">English</option>
+                    <option value="fr">French</option>
+                    <option value="rw">Kinyarwanda</option>
+                    <option value="es">Spanish</option>
+                    <option value="zh">Chinese</option>
+                </select>
+            </div>
+        </div>
     </header>
-
-    <main>
-        <section class="template-gallery">
-            <div class="template">
-                <img src="template1.jpg" alt="Template 1" class="template-img">
-                <button class="use-template-btn">Use This Template</button>
-            </div>
-            <div class="template">
-                <img src="template2.jpg" alt="Template 2" class="template-img">
-                <button class="use-template-btn">Use This Template</button>
-            </div>
-            <div class="template">
-                <img src="template3.jpg" alt="Template 3" class="template-img">
-                <button class="use-template-btn">Use This Template</button>
-            </div>
-        </section>
-    </main>
 </body>
 </html>
