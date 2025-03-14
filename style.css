@@ -350,3 +350,65 @@ header {
     max-width: 600px;
     margin: 0 auto;
 }
+/* Template Gallery Section */
+#template-gallery {
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: #fff;
+}
+
+#template-gallery h2 {
+    font-size: 2rem;
+    color: #93785b; /* Matches theme color */
+    margin-bottom: 1rem;
+}
+
+#template-gallery p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+/* Gallery Grid */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive 4x3 grid */
+    gap: 1.5rem; /* Spacing between templates */
+    padding: 0 2rem;
+}
+
+/* Template Card */
+.template {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.template-img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+/* Button for Templates */
+.use-template-btn {
+    display: inline-block;
+    background-color: #93785b;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.use-template-btn:hover {
+    background-color: #8a6e52;
+    transform: translateY(-3px);
+}
