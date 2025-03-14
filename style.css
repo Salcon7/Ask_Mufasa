@@ -165,6 +165,24 @@ nav ul li a:hover {
     pointer-events: none;
 }
 
+#home .animate-arise {
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: rise-animation 2s ease-out forwards;
+}
+
+@keyframes rise-animation {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        translateY(0);
+    }
+}
+
 #home h1, #home p {
     position: relative;
     z-index: 2;
@@ -215,11 +233,12 @@ nav ul li a:hover {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
     padding: 2rem;
     flex: 1;
     max-width: 400px; /* Ensure cards don’t exceed width */
     text-align: center;
+    animation: rise-animation 2s ease-out forwards;
 }
 
 /* Button Styling for Upload and Create */
@@ -242,5 +261,5 @@ nav ul li a:hover {
 .create-btn:hover {
     background-color: #8a6e52;
     transform: translateY(-3px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
 }
