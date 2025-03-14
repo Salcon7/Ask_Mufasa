@@ -49,10 +49,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const getStartedBtn = document.getElementById("get-started-btn");
     const resumeUploadSection = document.getElementById("resume-upload");
 
+    // Check localStorage to see if the cards should be visible
+    if (localStorage.getItem("cardsVisible") === "true") {
+        resumeUploadSection.style.display = "flex"; // Show the cards
+    }
+
     if (getStartedBtn && resumeUploadSection) {
         getStartedBtn.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent default link behavior
-            resumeUploadSection.style.display = "block"; // Show the upload section
+            resumeUploadSection.style.display = "flex"; // Show the upload section
+            localStorage.setItem("cardsVisible", "true"); // Save the visibility state
         });
     } else {
         console.error("Get Started button or Resume Upload section not found in the DOM.");
@@ -81,9 +87,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             try {
                 const response = await fetch("https://f4d9-105-179-5-74.ngrok-free.app/upload", {
-    method: "POST",
-    body: formData,
-});
+                    method: "POST",
+                    body: formData,
+                });
 
                 if (response.ok) {
                     const extractedData = await response.json();
@@ -114,6 +120,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const resumeUploadSection = document.getElementById("resume-upload");
     const cards = document.querySelectorAll(".card");
 
+    // Check localStorage to make cards visible when returning to the page
+    if (localStorage.getItem("cardsVisible") === "true") {
+        resumeUploadSection.style.display = "flex"; // Show the cards on load
+        cards.forEach((card) => {
+            card.style.opacity = 1; // Ensure visibility
+            card.style.animation = "rise-animation 2s ease-out forwards";
+        });
+    }
+
     getStartedBtn.addEventListener("click", (e) => {
         e.preventDefault(); // Prevent default anchor behavior
         resumeUploadSection.style.display = "flex"; // Show the upload section
@@ -124,5 +139,8 @@ document.addEventListener("DOMContentLoaded", () => {
             card.style.opacity = 1; // Ensure visibility
             card.style.animation = "rise-animation 2s ease-out forwards";
         });
+
+        // Save the visibility state of cards in localStorage
+        localStorage.setItem("cardsVisible", "true");
     });
 });
