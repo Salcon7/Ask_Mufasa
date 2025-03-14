@@ -263,3 +263,51 @@ nav ul li a:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
 }
+
+/* Template Page Styling */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.template-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.template {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.template-img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.use-template-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #93785b;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.use-template-btn:hover {
+    background-color: #8a6e52;
+    transform: translateY(-3px);
+}
