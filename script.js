@@ -112,10 +112,17 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const getStartedBtn = document.getElementById("get-started-btn");
     const resumeUploadSection = document.getElementById("resume-upload");
+    const cards = document.querySelectorAll(".card");
 
     getStartedBtn.addEventListener("click", (e) => {
         e.preventDefault(); // Prevent default anchor behavior
         resumeUploadSection.style.display = "flex"; // Show the upload section
         getStartedBtn.parentElement.style.marginBottom = "2rem"; // Add spacing below "Get Started" button
+
+        // Trigger animation for the cards
+        cards.forEach((card) => {
+            card.style.opacity = 1; // Ensure visibility
+            card.style.animation = "rise-animation 2s ease-out forwards";
+        });
     });
 });
