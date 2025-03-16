@@ -198,7 +198,7 @@ document.getElementById('upload-form').addEventListener('submit', async function
 
         if (response.ok) {
             const data = await response.json();
-            document.getElementById("name").textContent = data.name;  // Display extracted name
+            document.getElementById('name').textContent = data.name;  // Display extracted name
         } else {
             alert('Failed to fetch data from backend.');
         }
