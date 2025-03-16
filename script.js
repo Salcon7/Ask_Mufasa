@@ -75,44 +75,76 @@ document.addEventListener("DOMContentLoaded", () => {
     const experienceField = document.getElementById("experience");
     const skillsField = document.getElementById("skills");
 
-    uploadForm.addEventListener("submit", async (event) => {
-        event.preventDefault(); // Prevent the page from reloading
-
-        const fileInput = document.getElementById("resume");
-        const file = fileInput.files[0];
-
-        if (file) {
-            const formData = new FormData();
-            formData.append("resume", file);
-
-            try {
-                const response = await fetch("https://f4d9-105-179-5-74.ngrok-free.app/upload", {
-                    method: "POST",
-                    body: formData,
-                });
-
-                if (response.ok) {
-                    const extractedData = await response.json();
-
-                    // Display extracted information
-                    nameField.textContent = extractedData.name || "N/A";
-                    dobField.textContent = extractedData.dob || "N/A";
-                    experienceField.textContent = extractedData.experience || "N/A";
-                    skillsField.textContent = extractedData.skills || "N/A";
-
-                    cvSummary.style.display = "block"; // Show extracted data section
-                } else {
-                    console.error("Failed to extract data from the CV.");
-                    alert("Failed to process your CV. Please try again.");
-                }
-            } catch (error) {
-                console.error("Error uploading CV:", error);
-                alert("An error occurred while uploading your CV.");
+    uploadForm.addEventListener('submit', async function (event) {
+        event.preventDefault(); // Prevent form from refreshing the page
+    
+        const formData = new FormData(); // Create form data object
+        const fileInput = document.getElementById('resume');
+        const file = fileInput.files[0]; // Get the selected file
+    
+        if (!file) {
+            alert('Please select a file before uploading.');
+            return;
+        }
+    
+        formData.append('file', file); // Append the file to the form data
+    
+        try {
+            // Make a POST request to the backend
+            const response = await fetch('http://127.0.0.1:5000/upload', {
+                method: 'POST',
+                body: formData
+            });
+    
+            if (response.ok) {
+                const data = await response.json(); // Parse JSON response from backend
+                displayExtractedData(data.extracted_text); // Display the extracted text
+            } else {
+                alert('Failed to upload file. Please try again.');
             }
-        } else {
-            alert("Please select a file to upload.");
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
         }
     });
+    // uploadForm.addEventListener("submit", async (event) => {
+    //     event.preventDefault(); // Prevent the page from reloading
+
+    //     const fileInput = document.getElementById("resume");
+    //     const file = fileInput.files[0];
+
+    //     if (file) {
+    //         const formData = new FormData();
+    //         formData.append("resume", file);
+
+    //         try {
+    //             const response = await fetch("https://f4d9-105-179-5-74.ngrok-free.app/upload", {
+    //                 method: "POST",
+    //                 body: formData,
+    //             });
+
+    //             if (response.ok) {
+    //                 const extractedData = await response.json();
+
+    //                 // Display extracted information
+    //                 nameField.textContent = extractedData.name || "N/A";
+    //                 dobField.textContent = extractedData.dob || "N/A";
+    //                 experienceField.textContent = extractedData.experience || "N/A";
+    //                 skillsField.textContent = extractedData.skills || "N/A";
+
+    //                 cvSummary.style.display = "block"; // Show extracted data section
+    //             } else {
+    //                 console.error("Failed to extract data from the CV.");
+    //                 alert("Failed to process your CV. Please try again.");
+    //             }
+    //         } catch (error) {
+    //             console.error("Error uploading CV:", error);
+    //             alert("An error occurred while uploading your CV.");
+    //         }
+    //     } else {
+    //         alert("Please select a file to upload.");
+    //     }
+    // });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -144,3 +176,60 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("cardsVisible", "true");
     });
 });
+
+document.getElementById('upload-form').addEventListener('submit', async function (event) {
+    event.preventDefault(); // Prevent form from refreshing the page
+
+    const formData = new FormData(); // Create form data object
+    const fileInput = document.getElementById('resume');
+    const file = fileInput.files[0]; // Get the selected file
+
+    if (!file) {
+        alert('Please select a file before uploading.');
+        return;
+    }
+
+    formData.append('file', file); // Append the file to the form data
+
+    try {
+        // Make a POST request to the backend
+        const response = await fetch('http://127.0.0.1:5000/upload', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (response.ok) {
+            const data = await response.json(); // Parse JSON response from backend
+            displayExtractedData(data.extracted_text); // Display the extracted text
+        } else {
+            alert('Failed to upload file. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+    }
+});
+
+function displayExtractedData(text) {
+    // Display the extracted text in the "cv-summary" section
+    const cvSummary = document.getElementById('cv-summary');
+    cvSummary.style.display = 'block';
+    document.getElementById('name').textContent = extractName(text); // Add logic to extract the name
+    document.getElementById('dob').textContent = extractDOB(text); // Add logic to extract date of birth
+    document.getElementById('experience').textContent = extractExperience(text); // Add logic for experience
+    document.getElementById('skills').textContent = extractSkills(text); // Add logic for skills
+}
+
+// Placeholder functions for extracting data (you’ll implement actual logic)
+function extractName(text) {
+    return "John Doe"; // Replace with proper extraction logic
+}
+function extractDOB(text) {
+    return "January 1, 1990"; // Replace with proper extraction logic
+}
+function extractExperience(text) {
+    return "5 years in software development"; // Replace with proper extraction logic
+}
+function extractSkills(text) {
+    return "Python, Flask, Machine Learning"; // Replace with proper extraction logic
+}
