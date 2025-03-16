@@ -178,35 +178,33 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.getElementById('upload-form').addEventListener('submit', async function (event) {
-    event.preventDefault(); // Prevent form from refreshing the page
-
-    const formData = new FormData(); // Create form data object
+    event.preventDefault();
+    const formData = new FormData();
     const fileInput = document.getElementById('resume');
-    const file = fileInput.files[0]; // Get the selected file
+    const file = fileInput.files[0];
 
     if (!file) {
         alert('Please select a file before uploading.');
         return;
     }
 
-    formData.append('file', file); // Append the file to the form data
+    formData.append('file', file);
 
     try {
-        // Make a POST request to the backend
         const response = await fetch('http://127.0.0.1:5000/upload', {
             method: 'POST',
             body: formData
         });
 
         if (response.ok) {
-            const data = await response.json(); // Parse JSON response from backend
-            displayExtractedData(data.extracted_text); // Display the extracted text
+            const data = await response.json();
+            document.getElementById('name').textContent = data.name;  // Display extracted name
         } else {
-            alert('Failed to upload file. Please try again.');
+            alert('Failed to fetch data from backend.');
         }
     } catch (error) {
         console.error('Error:', error);
-        alert('An error occurred. Please try again.');
+        alert('An error occurred.');
     }
 });
 
