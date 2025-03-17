@@ -413,13 +413,18 @@ header {
     transform: translateY(-3px);
 }
 
+/* Your Dashboard Section Styling */
 #your-dashboard {
     position: relative;
-    background: url('dashboard background.jpeg') no-repeat center center/cover;
-    color: #000;
-    text-align: center;
-    padding: 5rem 2rem;
-    z-index: 1;
+    background: url('dashboard background.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: left;
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 2rem auto; /* Center aligns within the page */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #your-dashboard::before {
@@ -437,19 +442,21 @@ header {
 #your-dashboard h1, #your-dashboard p {
     position: relative; /* Ensure text is above the overlay */
     z-index: 1; /* Higher than the overlay */
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 1rem;
 }
 
-/* Extracted Info Styling */
+/* Extracted Information Section */
 #extracted-info {
-    position: relative;
-    background-color: #f9f9f9; /* Light background for better readability */
-    color: #333; /* Text color */
+    background-color: #f9f9f9;
+    color: #333;
     padding: 2rem;
-    text-align: left; /* Aligns content to the left */
-    max-width: 800px; /* Optional: Limits the width to avoid overly stretched content */
-    margin: 2rem auto; /* Centers the section horizontally on the page */
-    border-radius: 10px; /* Adds rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a clean look */
+    text-align: left;
+    max-width: 1200px;
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #extracted-info h2 {
@@ -458,8 +465,7 @@ header {
     color: #93785b; /* Matches theme color */
 }
 
-#extracted-info p,
-#extracted-info ul {
+#extracted-info p, #extracted-info ul {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1rem;
