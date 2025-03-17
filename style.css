@@ -417,10 +417,9 @@ header {
 #your-dashboard {
     position: relative;
     background: url('dashboard background.jpeg') no-repeat center center fixed;
-    background-size: cover;
     color: white;
-    text-align: left;
-    padding: 3rem 2rem;
+    text-align: center;
+    padding: 5rem 2rem;
     max-width: 1200px;
     margin: 2rem auto; /* Center aligns within the page */
     border-radius: 10px;
@@ -460,13 +459,13 @@ header {
 }
 
 #extracted-info h2 {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #93785b; /* Matches theme color */
 }
 
 #extracted-info p, #extracted-info ul {
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 1rem;
 }
@@ -477,4 +476,5 @@ header {
 
 #extracted-info ul li {
     margin-bottom: 0.5rem; /* Adds spacing between bullet points */
+    text-align: left;
 }
