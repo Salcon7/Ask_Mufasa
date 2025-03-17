@@ -63,138 +63,85 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         console.error("Get Started button or Resume Upload section not found in the DOM.");
     }
-});
 
-document.addEventListener("DOMContentLoaded", () => {
+    // Upload Form Submission
     const uploadForm = document.getElementById("upload-form");
-    const cvSummary = document.getElementById("cv-summary");
 
-    // Reference to extracted data fields
-    const nameField = document.getElementById("name");
-    const dobField = document.getElementById("dob");
-    const experienceField = document.getElementById("experience");
-    const skillsField = document.getElementById("skills");
+    if (uploadForm) {
+        uploadForm.addEventListener("submit", async function (event) {
+            event.preventDefault();
 
-    uploadForm.addEventListener('submit', async function (event) {
-        event.preventDefault(); // Prevent form from refreshing the page
-    
-        const formData = new FormData(); // Create form data object
-        const fileInput = document.getElementById('resume');
-        const file = fileInput.files[0]; // Get the selected file
-    
-        if (!file) {
-            alert('Please select a file before uploading.');
-            return;
-        }
-    
-        formData.append('file', file); // Append the file to the form data
-    
-        try {
-            // Make a POST request to the backend
-            const response = await fetch('http://127.0.0.1:5000/upload', {
-                method: 'POST',
-                body: formData
-            });
-    
-            if (response.ok) {
-                const data = await response.json(); // Parse JSON response from backend
+            const formData = new FormData();
+            const fileInput = document.getElementById("resume");
+            const file = fileInput.files[0];
 
-                console.log("Response",data)
-                displayExtractedData(data.extracted_text); // Display the extracted text
-            } else {
-                alert('Failed to upload file. Please try again.');
+            if (!file) {
+                alert("Please select a file before uploading.");
+                return;
             }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('An error occurred. Please try again.');
-        }
-    });
-});
 
-document.addEventListener("DOMContentLoaded", () => {
-    const getStartedBtn = document.getElementById("get-started-btn");
-    const resumeUploadSection = document.getElementById("resume-upload");
-    const cards = document.querySelectorAll(".card");
+            formData.append("file", file);
 
-    // Check localStorage to make cards visible when returning to the page
-    if (localStorage.getItem("cardsVisible") === "true") {
-        resumeUploadSection.style.display = "flex"; // Show the cards on load
-        cards.forEach((card) => {
-            card.style.opacity = 1; // Ensure visibility
-            card.style.animation = "rise-animation 2s ease-out forwards";
+            try {
+                // Simulate backend call and use default extracted data
+                const extractedData = {
+                    name: extractName(),
+                    date_of_birth: extractDOB(),
+                    experience: extractExperience(),
+                    skills: extractSkills()
+                };
+
+                // Save the extracted data to sessionStorage
+                sessionStorage.setItem("extractedData", JSON.stringify(extractedData));
+
+                // Redirect to the extracted info page
+                window.location.href = "extracted-info.html";
+            } catch (error) {
+                console.error("Error:", error);
+                alert("An error occurred. Please try again.");
+            }
         });
     }
 
-    getStartedBtn.addEventListener("click", (e) => {
-        e.preventDefault(); // Prevent default anchor behavior
-        resumeUploadSection.style.display = "flex"; // Show the upload section
-        getStartedBtn.parentElement.style.marginBottom = "2rem"; // Add spacing below "Get Started" button
+    // Load Extracted Information on extracted-info.html
+    const extractedInfoContainer = document.getElementById("extracted-info");
+    if (extractedInfoContainer) {
+        const extractedData = JSON.parse(sessionStorage.getItem("extractedData"));
 
-        // Trigger animation for the cards
-        cards.forEach((card) => {
-            card.style.opacity = 1; // Ensure visibility
-            card.style.animation = "rise-animation 2s ease-out forwards";
-        });
+        if (extractedData) {
+            // Create a function to format lists
+            const formatAsList = (text) => {
+                return text.split(',').map(item => `<li>${item.trim()}</li>`).join('');
+            };
 
-        // Save the visibility state of cards in localStorage
-        localStorage.setItem("cardsVisible", "true");
-    });
-});
-
-document.getElementById('upload-form').addEventListener('submit', async function (event) {
-    event.preventDefault();
-    const formData = new FormData();
-    const fileInput = document.getElementById('resume');
-    const file = fileInput.files[0];
-
-    if (!file) {
-        alert('Please select a file before uploading.');
-        return;
-    }
-
-    formData.append('file', file);
-
-    try {
-        const response = await fetch('http://127.0.0.1:5000/upload', {
-            method: 'POST',
-            body: formData
-        });
-
-        console.log("Response",response)
-
-        if (response.ok) {
-            const data = await response.json();
-            console.log(data)
-            document.getElementById('name').textContent = data.name;  // Display extracted name
+            // Dynamically populate the extracted information
+            extractedInfoContainer.innerHTML = `
+                <div class="content-container card">
+                    <h2>Extracted Information</h2>
+                    <p><strong>Name:</strong> ${extractedData.name}</p>
+                    <p><strong>Date of Birth:</strong> ${extractedData.date_of_birth}</p>
+                    <p><strong>Work Experience:</strong></p>
+                    <ul>${formatAsList(extractedData.experience)}</ul>
+                    <p><strong>Skills:</strong></p>
+                    <ul>${formatAsList(extractedData.skills)}</ul>
+                </div>
+            `;
         } else {
-            alert('Failed to fetch data from backend.');
+            extractedInfoContainer.innerHTML = "<p>No data available. Please upload a CV.</p>";
         }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('An error occurred.');
     }
 });
 
-function displayExtractedData(text) {
-    // Display the extracted text in the "cv-summary" section
-    const cvSummary = document.getElementById('cv-summary');
-    cvSummary.style.display = 'block';
-    document.getElementById('name').textContent = extractName(text); // Add logic to extract the name
-    document.getElementById('dob').textContent = extractDOB(text); // Add logic to extract date of birth
-    document.getElementById('experience').textContent = extractExperience(text); // Add logic for experience
-    document.getElementById('skills').textContent = extractSkills(text); // Add logic for skills
+// Placeholder functions for extracting data
+function extractName() {
+    return "Amina Msuya";
 }
-
-// Placeholder functions for extracting data (you’ll implement actual logic)
-function extractName(text) {
-    return "Amina Msuya"; // Replace with proper extraction logic
+function extractDOB() {
+    return "August 10, 2004";
 }
-function extractDOB(text) {
-    return "August 10, 2004"; // Replace with proper extraction logic
+function extractExperience() {
+    return "5 months in digital marketing, 8 months in college counselling, 4 months in teaching, 4 months in hospitality";
 }
-function extractExperience(text) {
-    return "5 months in digital marketing, 8 months in college councelling, 4 months in teaching, 4 months in hospitality"; // Replace with proper extraction logic
-}
-function extractSkills(text) {
-    return "Technical skills, programming, communication, customer service, leadership, resilience"; // Replace with proper extraction logic
+function extractSkills() {
+    return "Technical skills, programming, communication, customer service, leadership, resilience";
 }
