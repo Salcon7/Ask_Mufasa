@@ -415,11 +415,12 @@ header {
 
 #your-dashboard {
     position: relative;
-    background: url('dashboard background.png') no-repeat center center fixed;
-    background-size: cover;
+    background: url('dashboard background.png') no-repeat center center fixed; /* Ensure correct path */
+    background-size: cover; /* Adjust the image to fit the viewport */
     color: white;
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 5rem 2rem; /* Increased padding for a larger section */
+    overflow: hidden; /* Ensure no overflow */
 }
 
 #your-dashboard::before {
@@ -430,10 +431,10 @@ header {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-    z-index: -1;
+    z-index: -1; /* Stays behind the content */
 }
 
 #your-dashboard h1, #your-dashboard p {
     position: relative; /* Ensure text is above the overlay */
-    z-index: 1;
+    z-index: 1; /* Higher than the overlay */
 }
