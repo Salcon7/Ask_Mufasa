@@ -412,3 +412,28 @@ header {
     background-color: #8a6e52;
     transform: translateY(-3px);
 }
+
+#your-dashboard {
+    position: relative;
+    background: url('dashboard background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+#your-dashboard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: -1;
+}
+
+#your-dashboard h1, #your-dashboard p {
+    position: relative; /* Ensure text is above the overlay */
+    z-index: 1;
+}
