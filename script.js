@@ -109,44 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
             alert('An error occurred. Please try again.');
         }
     });
-    // uploadForm.addEventListener("submit", async (event) => {
-    //     event.preventDefault(); // Prevent the page from reloading
-
-    //     const fileInput = document.getElementById("resume");
-    //     const file = fileInput.files[0];
-
-    //     if (file) {
-    //         const formData = new FormData();
-    //         formData.append("resume", file);
-
-    //         try {
-    //             const response = await fetch("https://f4d9-105-179-5-74.ngrok-free.app/upload", {
-    //                 method: "POST",
-    //                 body: formData,
-    //             });
-
-    //             if (response.ok) {
-    //                 const extractedData = await response.json();
-
-    //                 // Display extracted information
-    //                 nameField.textContent = extractedData.name || "N/A";
-    //                 dobField.textContent = extractedData.dob || "N/A";
-    //                 experienceField.textContent = extractedData.experience || "N/A";
-    //                 skillsField.textContent = extractedData.skills || "N/A";
-
-    //                 cvSummary.style.display = "block"; // Show extracted data section
-    //             } else {
-    //                 console.error("Failed to extract data from the CV.");
-    //                 alert("Failed to process your CV. Please try again.");
-    //             }
-    //         } catch (error) {
-    //             console.error("Error uploading CV:", error);
-    //             alert("An error occurred while uploading your CV.");
-    //         }
-    //     } else {
-    //         alert("Please select a file to upload.");
-    //     }
-    // });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
