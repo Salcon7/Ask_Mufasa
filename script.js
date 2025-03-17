@@ -98,6 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
     
             if (response.ok) {
                 const data = await response.json(); // Parse JSON response from backend
+
+                console.log("Response",data)
                 displayExtractedData(data.extracted_text); // Display the extracted text
             } else {
                 alert('Failed to upload file. Please try again.');
@@ -196,8 +198,11 @@ document.getElementById('upload-form').addEventListener('submit', async function
             body: formData
         });
 
+        console.log("Response",response)
+
         if (response.ok) {
             const data = await response.json();
+            console.log(data)
             document.getElementById('name').textContent = data.name;  // Display extracted name
         } else {
             alert('Failed to fetch data from backend.');
@@ -220,14 +225,14 @@ function displayExtractedData(text) {
 
 // Placeholder functions for extracting data (you’ll implement actual logic)
 function extractName(text) {
-    return "John Doe"; // Replace with proper extraction logic
+    return "Amina Msuya"; // Replace with proper extraction logic
 }
 function extractDOB(text) {
-    return "January 1, 1990"; // Replace with proper extraction logic
+    return "August 10, 2004"; // Replace with proper extraction logic
 }
 function extractExperience(text) {
-    return "5 years in software development"; // Replace with proper extraction logic
+    return "5 months in digital marketing, 8 months in college councelling, 4 months in teaching, 4 months in hospitality"; // Replace with proper extraction logic
 }
 function extractSkills(text) {
-    return "Python, Flask, Machine Learning"; // Replace with proper extraction logic
+    return "Technical skills, programming, communication, customer service, leadership, resilience"; // Replace with proper extraction logic
 }
