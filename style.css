@@ -415,9 +415,9 @@ header {
 
 #your-dashboard {
     position: relative;
-    background: url('dashboard background.png') no-repeat center center fixed; /* Ensure correct path */
+    background: url('dashboard background.jpeg') no-repeat center center fixed; /* Ensure correct path */
     background-size: cover; /* Adjust the image to fit the viewport */
-    color: white;
+    color: #000;
     text-align: center;
     padding: 5rem 2rem; /* Increased padding for a larger section */
     overflow: hidden; /* Ensure no overflow */
@@ -437,4 +437,38 @@ header {
 #your-dashboard h1, #your-dashboard p {
     position: relative; /* Ensure text is above the overlay */
     z-index: 1; /* Higher than the overlay */
+}
+
+/* Extracted Info Styling */
+#extracted-info {
+    position: relative;
+    background-color: #f9f9f9; /* Light background for better readability */
+    color: #333; /* Text color */
+    padding: 2rem;
+    text-align: left; /* Aligns content to the left */
+    max-width: 800px; /* Optional: Limits the width to avoid overly stretched content */
+    margin: 2rem auto; /* Centers the section horizontally on the page */
+    border-radius: 10px; /* Adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a clean look */
+}
+
+#extracted-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #93785b; /* Matches theme color */
+}
+
+#extracted-info p,
+#extracted-info ul {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+#extracted-info ul {
+    padding-left: 1.5rem; /* Indents bullet points */
+}
+
+#extracted-info ul li {
+    margin-bottom: 0.5rem; /* Adds spacing between bullet points */
 }
