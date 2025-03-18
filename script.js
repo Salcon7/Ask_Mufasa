@@ -210,33 +210,56 @@ document.addEventListener("DOMContentLoaded", () => {
         "Socio-Emotional": ["Communication", "Teamwork", "Leadership", "Adaptability", "Emotional intelligence"],
         "Specialized": ["Technical skills", "Programming", "Project management", "Entrepreneurship"],
         "Green & Sustainable": ["Environmental awareness", "Sustainable practices"],
-        "Digital & Technological": ["Digital literacy", "Cybersecurity", "AI", "Cloud computing"]
+        "Digital & Technological": ["Digital literacy", "Cybersecurity", "Cloud computing", "AI"]
     };
 
-    // Simulated user skills
     const userSkills = ["Technical skills", "Programming", "Communication", "Customer service", "Leadership", "Resilience"];
 
-    // Function to calculate matching skills
-    const calculateSkillsComparison = () => {
-        const skillCounts = {
-            "Foundational": 0,
-            "Socio-Emotional": 0,
-            "Specialized": 0,
-            "Green & Sustainable": 0,
-            "Digital & Technological": 0
-        };
+    const generateRecommendations = () => {
+        const missingSkills = {};
+        const matchedSkills = {};
 
-        // Compare user skills against competitive skills
-        userSkills.forEach(skill => {
-            for (const category in competitiveSkills) {
-                if (competitiveSkills[category].includes(skill)) {
-                    skillCounts[category]++;
+        // Initialize empty arrays for missing and matched skills per category
+        for (const category in competitiveSkills) {
+            missingSkills[category] = [];
+            matchedSkills[category] = [];
+        }
+
+        // Compare user skills with competitive skill categories
+        for (const category in competitiveSkills) {
+            competitiveSkills[category].forEach(skill => {
+                if (userSkills.includes(skill)) {
+                    matchedSkills[category].push(skill);
+                } else {
+                    missingSkills[category].push(skill);
                 }
-            }
-        });
+            });
+        }
 
-        return skillCounts;
+        return { matchedSkills, missingSkills };
     };
+
+    // Button click to display recommendations
+    document.getElementById("compare-skills-btn").addEventListener("click", () => {
+        const { matchedSkills, missingSkills } = generateRecommendations();
+
+        // Clear existing recommendations
+        const recommendationsList = document.getElementById("recommendations-list");
+        recommendationsList.innerHTML = "";
+
+        // Add missing skills to the recommendations list
+        for (const category in missingSkills) {
+            if (missingSkills[category].length > 0) {
+                const li = document.createElement("li");
+                li.innerHTML = `<strong>${category} Skills:</strong> ${missingSkills[category].join(", ")}`;
+                recommendationsList.appendChild(li);
+            }
+        }
+
+        // Show recommendations section
+        document.getElementById("recommendations").style.display = "block";
+    });
+});
 
     // Display the chart when the button is clicked
     document.getElementById("compare-skills-btn").addEventListener("click", () => {
