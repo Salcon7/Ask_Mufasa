@@ -51,7 +51,7 @@ const resumeUploadSection = document.getElementById("resume-upload");
 
 // Check localStorage to see if the cards should be visible
 if (localStorage.getItem("cardsVisible") === "true") {
-    resumeUploadSection.style.display = "flex"; // Show the cards
+    resumeUploadSection.style.display = "flex"; // Show the cards on load
 }
 
 if (getStartedBtn && resumeUploadSection) {
@@ -310,4 +310,3 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-});
