@@ -464,7 +464,7 @@ header {
     color: #93785b; /* Matches theme color */
 }
 
-#extracted-info p, #extracted-info ul {
+#extracted-info p, {
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 1rem;
@@ -472,6 +472,7 @@ header {
 
 #extracted-info ul {
     padding-left: 1.5rem; /* Indents bullet points */
+    text-align: left;
 }
 
 #extracted-info ul li {
