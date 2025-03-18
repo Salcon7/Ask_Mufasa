@@ -204,3 +204,76 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const competitiveSkills = {
+        "Foundational": ["Problem-solving", "Critical thinking", "Creativity", "Analytical reasoning"],
+        "Socio-Emotional": ["Communication", "Teamwork", "Leadership", "Adaptability", "Emotional intelligence"],
+        "Specialized": ["Technical skills", "Programming", "Project management", "Entrepreneurship"],
+        "Green & Sustainable": ["Environmental awareness", "Sustainable practices"],
+        "Digital & Technological": ["Digital literacy", "Cybersecurity", "AI", "Cloud computing"]
+    };
+
+    // Simulated user skills
+    const userSkills = ["Technical skills", "Programming", "Communication", "Customer service", "Leadership", "Resilience"];
+
+    // Function to calculate matching skills
+    const calculateSkillsComparison = () => {
+        const skillCounts = {
+            "Foundational": 0,
+            "Socio-Emotional": 0,
+            "Specialized": 0,
+            "Green & Sustainable": 0,
+            "Digital & Technological": 0
+        };
+
+        // Compare user skills against competitive skills
+        userSkills.forEach(skill => {
+            for (const category in competitiveSkills) {
+                if (competitiveSkills[category].includes(skill)) {
+                    skillCounts[category]++;
+                }
+            }
+        });
+
+        return skillCounts;
+    };
+
+    // Display the chart when the button is clicked
+    document.getElementById("compare-skills-btn").addEventListener("click", () => {
+        const skillCounts = calculateSkillsComparison();
+
+        // Prepare the data for the chart
+        const data = {
+            labels: Object.keys(skillCounts),
+            datasets: [{
+                label: "Skill Categories",
+                data: Object.values(skillCounts),
+                backgroundColor: [
+                    "#ff9999", "#66b3ff", "#99ff99", "#ffcc99", "#c299ff"
+                ]
+            }]
+        };
+
+        // Show the chart container
+        document.getElementById("skills-comparison-chart").style.display = "block";
+        const ctx = document.getElementById("skills-comparison-chart").getContext("2d");
+
+        // Render the Pie Chart
+        new Chart(ctx, {
+            type: "pie",
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: "top"
+                    },
+                    title: {
+                        display: true,
+                        text: "Skills Comparison"
+                    }
+                }
+            }
+        });
+    });
+});
