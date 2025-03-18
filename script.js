@@ -256,7 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Show the chart container
         document.getElementById("skills-comparison-chart").style.display = "block";
-        const ctx = document.getElementById("skills-comparison-chart").getContext("2d");
+        const ctx = document.getElementById("skills-chart").getContext("2d");
 
         // Render the Pie Chart
         new Chart(ctx, {
