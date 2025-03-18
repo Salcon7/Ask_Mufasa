@@ -145,3 +145,62 @@ function extractExperience() {
 function extractSkills() {
     return "Technical skills, programming, communication, customer service, leadership, resilience";
 }
+document.addEventListener("DOMContentLoaded", () => {
+    // Simulated extracted data
+    const extractedData = {
+        name: "Amina Msuya",
+        date_of_birth: "August 10, 2004",
+        experience: [
+            "5 months in digital marketing",
+            "8 months in college counselling",
+            "4 months in teaching",
+            "4 months in hospitality"
+        ],
+        skills: [
+            "Technical skills",
+            "Programming",
+            "Communication",
+            "Customer service",
+            "Leadership",
+            "Resilience"
+        ]
+    };
+
+    const typeWriter = (element, text, delay, callback) => {
+        let index = 0;
+        const timer = setInterval(() => {
+            element.textContent += text.charAt(index);
+            index++;
+            if (index === text.length) {
+                clearInterval(timer);
+                if (callback) callback();
+            }
+        }, delay);
+    };
+
+    const typeList = (listElement, items, delay, itemDelay, callback) => {
+        let index = 0;
+        const typeNextItem = () => {
+            if (index < items.length) {
+                const li = document.createElement("li");
+                listElement.appendChild(li);
+                typeWriter(li, items[index], delay, () => {
+                    index++;
+                    setTimeout(typeNextItem, itemDelay); // Delay before the next item
+                });
+            } else if (callback) {
+                callback();
+            }
+        };
+        typeNextItem();
+    };
+
+    // Typewriter animation execution
+    typeWriter(document.getElementById("name"), extractedData.name, 50, () => {
+        typeWriter(document.getElementById("dob"), extractedData.date_of_birth, 50, () => {
+            typeList(document.getElementById("experience-list"), extractedData.experience, 50, 500, () => {
+                typeList(document.getElementById("skills-list"), extractedData.skills, 50, 500);
+            });
+        });
+    });
+});
