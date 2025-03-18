@@ -46,23 +46,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Get Started Button and Resume Upload Section
-    const getStartedBtn = document.getElementById("get-started-btn");
-    const resumeUploadSection = document.getElementById("resume-upload");
+const getStartedBtn = document.getElementById("get-started-btn");
+const resumeUploadSection = document.getElementById("resume-upload");
 
-    // Check localStorage to see if the cards should be visible
-    if (localStorage.getItem("cardsVisible") === "true") {
-        resumeUploadSection.style.display = "flex"; // Show the cards
-    }
+// Check localStorage to see if the cards should be visible
+if (localStorage.getItem("cardsVisible") === "true") {
+    resumeUploadSection.style.display = "flex"; // Show the cards
+}
 
-    if (getStartedBtn && resumeUploadSection) {
-        getStartedBtn.addEventListener("click", (event) => {
-            event.preventDefault(); // Prevent default link behavior
-            resumeUploadSection.style.display = "flex"; // Show the upload section
-            localStorage.setItem("cardsVisible", "true"); // Save the visibility state
-        });
-    } else {
-        console.error("Get Started button or Resume Upload section not found in the DOM.");
-    }
+if (getStartedBtn && resumeUploadSection) {
+    getStartedBtn.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent default link behavior
+
+        // Debugging: Log to ensure the button works
+        console.log("Get Started button clicked!");
+
+        // Show the upload section and save the state in localStorage
+        resumeUploadSection.style.display = "flex";
+        localStorage.setItem("cardsVisible", "true");
+
+        // Debugging: Confirm style change
+        console.log("Resume Upload Section is now visible!");
+    });
+} else {
+    console.error("Get Started button or Resume Upload section not found in the DOM.");
+}
+if (!localStorage.getItem("cardsVisible")) {
+    console.log("No previous session data found for cardsVisible. Defaulting to hidden.");
+}
 
     // Upload Form Submission
     const uploadForm = document.getElementById("upload-form");
