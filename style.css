@@ -521,3 +521,60 @@ header {
     background-color: #8a6e52;
     transform: translateY(-3px);
 }
+/* Container for the card, button, and chart */
+#extracted-info-section .info-container {
+    display: flex; /* Enables horizontal alignment */
+    flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+    gap: 1.5rem; /* Adds space between items */
+    justify-content: center; /* Centers the items horizontally */
+    align-items: flex-start; /* Aligns items vertically at the top */
+    margin: 2rem auto;
+    max-width: 1200px; /* Sets a max width for the section */
+    padding: 1rem;
+}
+
+/* Content Card Styling */
+.content-container {
+    flex: 1; /* Allows the card to grow and take up space */
+    max-width: 400px; /* Ensures the card doesn’t stretch too much */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+}
+
+/* Button Styling */
+.compare-btn {
+    align-self: center; /* Aligns the button with the other items */
+    padding: 0.8rem 1.5rem;
+    background-color: #93785b;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+.compare-btn:hover {
+    background-color: #8a6e52;
+    transform: translateY(-3px);
+}
+
+/* Chart Styling */
+#skills-comparison-chart {
+    flex: 1; /* Allows the chart to grow with the layout */
+    max-width: 400px; /* Sets a max width for the chart container */
+    background-color: #fff; /* Optional: Add a background for visual consistency */
+    padding: 1rem;
+    border: 1px solid #ddd; /* Matches the card border style */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    display: flex; /* Ensures proper alignment of the canvas */
+    justify-content: center;
+    align-items: center;
+}
