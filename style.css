@@ -146,8 +146,8 @@ nav ul li a:hover {
 
 #home {
     position: relative;
-    background: url('Mufasa background.jpg') no-repeat center center/cover;
-    color: #000;
+    background: url('/dashboard\ background.jpeg') no-repeat center center/cover;
+    color: #ffffff;
     text-align: center;
     padding: 5rem 2rem;
     z-index: 1;
@@ -179,7 +179,7 @@ nav ul li a:hover {
     }
     100% {
         opacity: 1;
-        translateY(0);
+        translateY: (0);
     }
 }
 
@@ -322,6 +322,11 @@ header {
     z-index: 1;
 }
 
+.background-image {
+    background-image: url(/dashboard\ background.jpeg);
+
+}
+
 #create-cv::before {
     content: '';
     position: absolute;
@@ -416,11 +421,13 @@ header {
 /* Your Dashboard Section Styling */
 #your-dashboard {
     position: relative;
-    background: url('dashboard background.jpeg') no-repeat center center fixed;
+    /* background: url('dashboard background.jpeg') no-repeat center center fixed; */
+    /* background-image: url('/dashboard\ background.jpeg'); */
     color: white;
     text-align: center;
     padding: 5rem 2rem;
     max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 2rem auto; /* Center aligns within the page */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -447,7 +454,7 @@ header {
 }
 
 /* Extracted Information Section */
-#extracted-info {
+#extracted-info-section {
     background-color: #f9f9f9;
     color: #333;
     padding: 2rem;
@@ -458,24 +465,24 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#extracted-info h2 {
+#extracted-info-section h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #93785b; /* Matches theme color */
 }
 
-#extracted-info p, {
+#extracted-info-section p {
     font-size: 1.2rem;
-    line-height: 1.6;
+    line-height: 1.1;
     margin-bottom: 1rem;
 }
 
-#extracted-info ul {
+#extracted-info-section ul {
     padding-left: 1.5rem; /* Indents bullet points */
     text-align: left;
 }
 
-#extracted-info ul li {
+#extracted-info-section ul li {
     margin-bottom: 0.5rem; /* Adds spacing between bullet points */
     text-align: left;
 }
@@ -543,6 +550,7 @@ header {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     padding: 1.5rem;
+    text-align: left;
 }
 
 /* Button Styling */
@@ -567,7 +575,7 @@ header {
 }
 
 /* Chart Styling */
-#skills-comparison-chart {
+#skills-chart {
     flex: 1; /* Allows the chart to grow with the layout */
     max-width: 400px; /* Sets a max width for the chart container */
     background-color: #fff; /* Optional: Add a background for visual consistency */
@@ -578,47 +586,4 @@ header {
     display: flex; /* Ensures proper alignment of the canvas */
     justify-content: center;
     align-items: center;
-}
-/* Skills Categories Section */
-#skills-categories {
-    background-color: #f9f9f9;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 2rem auto;
-    max-width: 800px;
-    color: #333;
-}
-
-#skills-categories ul {
-    list-style: none;
-    padding: 0;
-}
-
-#skills-categories li {
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-/* Recommendations Section */
-#recommendations {
-    background-color: #f9f9f9;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 2rem auto;
-    max-width: 800px;
-    color: #333;
-}
-
-#recommendations ul {
-    list-style: none;
-    padding: 0;
-}
-
-#recommendations li {
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    line-height: 1.5;
 }
