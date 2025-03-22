@@ -146,7 +146,7 @@ nav ul li a:hover {
 
 #home {
     position: relative;
-    background: url('/dashboard\ background.jpeg') no-repeat center center/cover;
+    background: url('/Mufasa\ background.jpeg') no-repeat center center/cover;
     color: #ffffff;
     text-align: center;
     padding: 5rem 2rem;
@@ -421,8 +421,7 @@ header {
 /* Your Dashboard Section Styling */
 #your-dashboard {
     position: relative;
-    /* background: url('dashboard background.jpeg') no-repeat center center fixed; */
-    /* background-image: url('/dashboard\ background.jpeg'); */
+    background: url('/dashboard\ background.jpeg') no-repeat center center/cover;
     color: white;
     text-align: center;
     padding: 5rem 2rem;
@@ -445,13 +444,24 @@ header {
     pointer-events: none;
 }
 
-#your-dashboard h1, #your-dashboard p {
+#your-dashboard h1 {
     position: relative; /* Ensure text is above the overlay */
     z-index: 1; /* Higher than the overlay */
     max-width: 800px;
     margin: 0 auto;
     padding-bottom: 1rem;
-}
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    }
+    
+    #your-dashboard p {
+     font-size: 1.2rem;
+     max-width: 800px;
+     margin: 0 auto;
+     color: white;
+    }
+
 
 /* Extracted Information Section */
 #extracted-info-section {
@@ -473,13 +483,14 @@ header {
 
 #extracted-info-section p {
     font-size: 1.2rem;
-    line-height: 1.1;
+    line-height: 0.3;
     margin-bottom: 1rem;
 }
 
 #extracted-info-section ul {
     padding-left: 1.5rem; /* Indents bullet points */
     text-align: left;
+    margin-bottom: 0;
 }
 
 #extracted-info-section ul li {
@@ -536,9 +547,9 @@ header {
     gap: 1.5rem; /* Adds space between items */
     justify-content: center; /* Centers the items horizontally */
     align-items: flex-start; /* Aligns items vertically at the top */
-    margin: 2rem auto;
+    margin: 1rem auto;
     max-width: 1200px; /* Sets a max width for the section */
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 /* Content Card Styling */
@@ -587,3 +598,43 @@ header {
     justify-content: center;
     align-items: center;
 }
+#module-directory {
+    background-color: #f9f9f9;
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+#module-directory h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.directory-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.module-btn {
+    background-color: #93785b;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap; /* Ensures text stays on one line */
+}
+
+.module-btn:hover {
+    background-color: #8a6e52;
+    transform: translateY(-3px);
+}
+
