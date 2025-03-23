@@ -148,10 +148,10 @@ function extractName() {
     return "Amina Msuya";
 }
 function extractDOB() {
-    return "August 10, 2004";
+    return "August 10, 2003";
 }
 function extractExperience() {
-    return "5 months in digital marketing, 8 months in college counselling, 4 months in teaching, 4 months in hospitality";
+    return "5 months in digital marketing, 8 months in college counseling, 4 months in teaching, 4 months in hospitality";
 }
 function extractSkills() {
     return "Technical skills, programming, communication, customer service, leadership, resilience";
@@ -160,10 +160,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Simulated extracted data
     const extractedData = {
         name: "Amina Msuya",
-        date_of_birth: "August 10, 2004",
+        date_of_birth: "August 10, 2003",
         experience: [
             "5 months in digital marketing",
-            "8 months in college counselling",
+            "8 months in college counseling",
             "4 months in teaching",
             "4 months in hospitality"
         ],
