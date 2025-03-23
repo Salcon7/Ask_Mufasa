@@ -580,7 +580,7 @@ header {
 }
 
 /* Chart Styling */
-#skills-chart {
+#skills-comparison-chart {
     flex: 1; /* Allows the chart to grow with the layout */
     max-width: 400px; /* Sets a max width for the chart container */
     background-color: #fff; /* Optional: Add a background for visual consistency */
