@@ -420,7 +420,7 @@ header {
     color: white;
     text-align: center;
     padding: 5rem 2rem;
-    margin: 2rem auto;
+    margin: 0 auto;
     border-radius: 10px;
     z-index: 1;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -440,7 +440,7 @@ header {
 
 #your-dashboard h1 {
     position: relative; /* Ensure text is above the overlay */
-    z-index: 1; /* Higher than the overlay */
+    z-index: 1;
     max-width: 800px;
     margin: 0 auto;
     padding-bottom: 1rem;
@@ -453,7 +453,7 @@ header {
      font-size: 1.2rem;
      max-width: 800px;
      margin: 0 auto;
-     color: white;
+     color: #fff;
     }
 
 
