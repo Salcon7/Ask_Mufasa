@@ -420,10 +420,9 @@ header {
     color: white;
     text-align: center;
     padding: 5rem 2rem;
-    max-width: 1200px;
-    /* max-width: 1200px; */
-    margin: 2rem auto; /* Center aligns within the page */
+    margin: 2rem auto;
     border-radius: 10px;
+    z-index: 1;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
