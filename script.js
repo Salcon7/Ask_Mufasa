@@ -261,7 +261,7 @@ document.getElementById("compare-skills-btn").addEventListener("click", () => {
     };
 
     // Show the chart container
-    const chartContainer = document.getElementById("skills-chart");
+    const chartContainer = document.getElementById("skills-comparison-chart");
     chartContainer.style.display = "block";
     console.log("Skills chart is now visible.");
 
