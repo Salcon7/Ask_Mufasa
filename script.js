@@ -122,11 +122,11 @@ if (!localStorage.getItem("cardsVisible")) {
         if (extractedData) {
             // Create a function to format lists
             const formatAsList = (text) => {
-                return text.split(',').map(item => `<li>${item.trim()}</li>`).join('');
+                return text.split(',').map(item => <li>${item.trim()}</li>).join('');
             };
 
             // Dynamically populate the extracted information
-            extractedInfoContainer.innerHTML = `
+            extractedInfoContainer.innerHTML = 
                 <div class="content-container card">
                     <h2>Extracted Information</h2>
                     <p><strong>Name:</strong> ${extractedData.name}</p>
@@ -136,7 +136,7 @@ if (!localStorage.getItem("cardsVisible")) {
                     <p><strong>Skills:</strong></p>
                     <ul>${formatAsList(extractedData.skills)}</ul>
                 </div>
-            `;
+            ;
         } else {
             extractedInfoContainer.innerHTML = "<p>No data available. Please upload a CV.</p>";
         }
@@ -285,61 +285,4 @@ document.getElementById("compare-skills-btn").addEventListener("click", () => {
             },
         },
     });
-});
- // Handle the button click event
-    document.getElementById("compare-skills-btn").addEventListener("click", () => {
-        console.log("Compare Skills button clicked!");
-        const skillCounts = calculateSkillsComparison();
-        console.log("Skill Counts:", skillCounts);  // Check the output
-        compareSkillsCounts(skillCounts);
-    });
-
-    // Define the compareSkillsCounts function
-    function compareSkillsCounts(skillCounts) {
-        if (!skillCounts || Object.keys(skillCounts).length === 0) {
-            console.error("No skill counts available.");
-            return;
-        }
-
-        // Prepare the data for the chart
-        const data = {
-            labels: Object.keys(skillCounts), // Categories
-            datasets: [{
-                label: "Skill Categories",
-                data: Object.values(skillCounts), // Skill counts
-                backgroundColor: ["#ff9999", "#66b3ff", "#99ff99", "#ffcc99", "#c299ff"],
-            }]
-        };
-
-        // Show the chart container
-        const chartContainer = document.getElementById("skills-comparison-chart");
-        chartContainer.style.display = "block";
-        console.log("Skills chart is now visible.");
-
-        // Get the context of the canvas to render the chart
-        const ctx = document.getElementById("skills-chart").getContext("2d");
-
-        // If chart already exists, destroy it before creating a new one (to avoid multiple charts)
-        if (window.skillsChart) {
-            window.skillsChart.destroy();
-        }
-
-        // Render the Pie Chart
-        window.skillsChart = new Chart(ctx, {
-            type: "pie", // Pie chart type
-            data: data, // Data for the chart
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: "top",
-                    },
-                    title: {
-                        display: true,
-                        text: "Skills Comparison", // Title for the chart
-                    },
-                },
-            },
-        });
-    }
-});
+});  
