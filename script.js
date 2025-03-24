@@ -247,6 +247,7 @@ const calculateSkillsComparison = () => {
     // Display the chart when the button is clicked
 document.getElementById("compare-skills-btn").addEventListener("click", () => {
     // Ensure calculateSkillsComparison() is defined and provides data
+    console.log('button clicked')
     const skillCounts = calculateSkillsComparison();
 
 
