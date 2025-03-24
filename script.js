@@ -51,7 +51,7 @@ const resumeUploadSection = document.getElementById("resume-upload");
 
 // Check localStorage to see if the cards should be visible
 if (localStorage.getItem("cardsVisible") === "true") {
-    resumeUploadSection.style.display = "flex"; // Show the cards on load
+    resumeUploadSection.style.display = "flex"; // Show the cards
 }
 
 if (getStartedBtn && resumeUploadSection) {
@@ -115,7 +115,7 @@ if (!localStorage.getItem("cardsVisible")) {
     }
 
     // Load Extracted Information on extracted-info.html
-    const extractedInfoContainer = document.getElementById("extracted-info-section");
+    const extractedInfoContainer = document.getElementById("extracted-info");
     if (extractedInfoContainer) {
         const extractedData = JSON.parse(sessionStorage.getItem("extractedData"));
 
@@ -148,10 +148,10 @@ function extractName() {
     return "Amina Msuya";
 }
 function extractDOB() {
-    return "August 10, 2003";
+    return "August 10, 2004";
 }
 function extractExperience() {
-    return "5 months in digital marketing, 8 months in college counseling, 4 months in teaching, 4 months in hospitality";
+    return "5 months in digital marketing, 8 months in college counselling, 4 months in teaching, 4 months in hospitality";
 }
 function extractSkills() {
     return "Technical skills, programming, communication, customer service, leadership, resilience";
@@ -160,20 +160,21 @@ document.addEventListener("DOMContentLoaded", () => {
     // Simulated extracted data
     const extractedData = {
         name: "Amina Msuya",
-        date_of_birth: "August 10, 2003",
+        date_of_birth: "August 10, 2004",
         experience: [
             "5 months in digital marketing",
-            "8 months in college counseling",
+            "8 months in college counselling",
             "4 months in teaching",
             "4 months in hospitality"
         ],
         skills: [
-            "Technical skills",
+            "Digital marketing",
             "Programming",
             "Communication",
             "Customer service",
             "Leadership",
-            "Resilience"
+            "Resilience",
+            "Creativity"
         ]
     };
 
@@ -227,11 +228,11 @@ const userSkills = ["Technical skills", "Programming", "Communication", "Custome
 
 const calculateSkillsComparison = () => {
     const skillCounts = {
-        "Foundational": 0,
-        "Socio-Emotional": 0,
-        "Specialized": 0,
+        "Foundational": 1,
+        "Socio-Emotional": 3,
+        "Specialized": 2,
         "Green & Sustainable": 0,
-        "Digital & Technological": 0
+        "Digital & Technological": 1
     };
 
     userSkills.forEach(skill => {
@@ -244,44 +245,101 @@ const calculateSkillsComparison = () => {
 
     return skillCounts;
 };
-    // Display the chart when the button is clicked
-document.getElementById("compare-skills-btn").addEventListener("click", () => {
-    // Ensure calculateSkillsComparison() is defined and provides data
-    const skillCounts = calculateSkillsComparison();
-
-
-    // Prepare the data for the chart
-    const data = {
-        labels: Object.keys(skillCounts),
-        datasets: [{
-            label: "Skill Categories",
-            data: Object.values(skillCounts),
-            backgroundColor: ["#ff9999", "#66b3ff", "#99ff99", "#ffcc99", "#c299ff"],
-        }]
+document.addEventListener("DOMContentLoaded", () => {
+    const competitiveSkills = {
+        "Foundational": ["Problem-solving", "Critical thinking", "Creativity", "Analytical reasoning"],
+        "Socio-Emotional": ["Communication", "Teamwork", "Leadership", "Adaptability", "Emotional intelligence"],
+        "Specialized": ["Technical skills", "Programming", "Project management", "Entrepreneurship"],
+        "Green & Sustainable": ["Environmental awareness", "Sustainable practices"],
+        "Digital & Technological": ["Digital literacy", "Cybersecurity", "Cloud computing", "AI"]
     };
 
-    // Show the chart container
-    const chartContainer = document.getElementById("skills-comparison-chart");
-    chartContainer.style.display = "block";
-    console.log("Skills chart is now visible.");
+    const userSkills = ["Technical skills", "Programming", "Communication", "Customer service", "Leadership", "Resilience"];
 
-    // Get the context of the canvas
-    const ctx = document.getElementById("skills-chart").getContext("2d");
+    const generateRecommendations = () => {
+        const missingSkills = {};
+        const matchedSkills = {};
 
-    // Render the Pie Chart
-    new Chart(ctx, {
-        type: "pie",
-        data: data,
-        options: {
-            responsive: true,
-            plugins: {
-                legend: { position: "top"
-                 },
-                title: { 
-                    display: true, 
-                    text: "Skills Comparison" 
-                },
-            },
-        },
+        // Initialize empty arrays for missing and matched skills per category
+        for (const category in competitiveSkills) {
+            missingSkills[category] = [];
+            matchedSkills[category] = [];
+        }
+
+        // Compare user skills with competitive skill categories
+        for (const category in competitiveSkills) {
+            competitiveSkills[category].forEach(skill => {
+                if (userSkills.includes(skill)) {
+                    matchedSkills[category].push(skill);
+                } else {
+                    missingSkills[category].push(skill);
+                }
+            });
+        }
+
+        return { matchedSkills, missingSkills };
+    };
+
+    
+
+    // Button click to display recommendations
+    document.getElementById("compare-skills-btn").addEventListener("click", () => {
+        const { matchedSkills, missingSkills } = generateRecommendations();
+
+        // Clear existing recommendations
+        const recommendationsList = document.getElementById("recommendations-list");
+        recommendationsList.innerHTML = "";
+
+        // Add missing skills to the recommendations list
+        for (const category in missingSkills) {
+            if (missingSkills[category].length > 0) {
+                const li = document.createElement("li");
+                li.innerHTML = `<strong>${category} Skills:</strong> ${missingSkills[category].join(", ")}`;
+                recommendationsList.appendChild(li);
+            }
+        }
+
+        // Show recommendations section
+        document.getElementById("recommendations").style.display = "block";
     });
 });
+
+    // Display the chart when the button is clicked
+    document.getElementById("compare-skills-btn").addEventListener("click", () => {
+        const skillCounts = calculateSkillsComparison();
+      console.log('button clicked')
+        // Prepare the data for the chart
+        const data = {
+            labels: Object.keys(skillCounts),
+            datasets: [{
+                label: "Skill Categories",
+                data: Object.values(skillCounts),
+                backgroundColor: [
+                    "#ff9999", "#66b3ff", "#99ff99", "#ffcc99", "#c299ff"
+                ]
+            }]
+        };
+
+        // Show the chart container
+        document.getElementById("skills-comparison-chart").style.display = "block";
+        const ctx = document.getElementById("skills-chart").getContext("2d");
+
+        // Render the Pie Chart
+        new Chart(ctx, {
+            type: "pie",
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: "top"
+                    },
+                    title: {
+                        display: true,
+                        text: "Skills Comparison"
+                    }
+                }
+            }
+        });
+    });
+;
