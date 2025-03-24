@@ -122,11 +122,11 @@ if (!localStorage.getItem("cardsVisible")) {
         if (extractedData) {
             // Create a function to format lists
             const formatAsList = (text) => {
-                return text.split(',').map(item => <li>${item.trim()}</li>).join('');
+                return text.split(',').map(item => `<li>${item.trim()}</li>`).join('');
             };
 
             // Dynamically populate the extracted information
-            extractedInfoContainer.innerHTML = 
+            extractedInfoContainer.innerHTML = `
                 <div class="content-container card">
                     <h2>Extracted Information</h2>
                     <p><strong>Name:</strong> ${extractedData.name}</p>
@@ -136,7 +136,7 @@ if (!localStorage.getItem("cardsVisible")) {
                     <p><strong>Skills:</strong></p>
                     <ul>${formatAsList(extractedData.skills)}</ul>
                 </div>
-            ;
+            `;
         } else {
             extractedInfoContainer.innerHTML = "<p>No data available. Please upload a CV.</p>";
         }
@@ -247,7 +247,6 @@ const calculateSkillsComparison = () => {
     // Display the chart when the button is clicked
 document.getElementById("compare-skills-btn").addEventListener("click", () => {
     // Ensure calculateSkillsComparison() is defined and provides data
-    console.log('button clicked')
     const skillCounts = calculateSkillsComparison();
 
 
@@ -285,4 +284,4 @@ document.getElementById("compare-skills-btn").addEventListener("click", () => {
             },
         },
     });
-});  
+});
