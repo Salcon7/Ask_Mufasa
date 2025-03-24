@@ -342,4 +342,4 @@ document.getElementById("compare-skills-btn").addEventListener("click", () => {
             },
         });
     }
-});
+);
